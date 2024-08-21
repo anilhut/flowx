@@ -1,0 +1,11 @@
+<svg width="81" height="81" viewBox="0 0 81 81" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="60" y="63" width="4" height="38" transform="rotate(90 60 63)" fill="#3865AB" stroke="#F3C90F" stroke-width="2"/>
+<rect x="36.366" y="23.366" width="4" height="38" transform="rotate(30 36.366 23.366)" fill="#3865AB" stroke="#F3C90F" stroke-width="2"/>
+<rect x="42.366" y="25.366" width="4" height="38" transform="rotate(-30 42.366 25.366)" fill="#3865AB" stroke="#F3C90F" stroke-width="2"/>
+<rect x="26" y="1" width="28" height="28" rx="4" fill="#3865AB" stroke="#F3C90F" stroke-width="2"/>
+<rect x="35.5" y="10.5" width="9" height="9" fill="#F3C90F" stroke="#F3C90F"/>
+<rect x="1" y="50" width="28" height="28" rx="14" fill="#3865AB" stroke="#F3C90F" stroke-width="2"/>
+<rect x="10.5" y="59.5" width="9" height="9" rx="4.5" fill="#F3C90F" stroke="#F3C90F"/>
+<rect x="50.4142" y="64.5564" width="20" height="20" transform="rotate(-45 50.4142 64.5564)" fill="#3865AB" stroke="#F3C90F" stroke-width="2"/>
+<rect x="64.6567" y="59.7071" width="7" height="7" transform="rotate(45 64.6567 59.7071)" fill="#F3C90F" stroke="#F3C90F"/>
+</svg>

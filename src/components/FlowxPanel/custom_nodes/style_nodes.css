@@ -1,0 +1,337 @@
+:root {
+  --whiteNode: #ffffff;
+  --redNode: #f2495c;
+  --orangeNode: #ff9830;
+  --yellowNode: #fade2a;
+  --greenNode: #73bf69;
+  --blueNode: #5794f2;
+  --grayNode: #ebebeb;
+}
+
+.panelContainer {
+  width: 100%;
+  height: 100%;
+  color: black;
+  position: relative;
+  overflow: hidden;
+}
+
+/*FOR CUSTOM NODES GENERAL*/
+.nodeCustomContainer {
+  border: 1px solid black;
+  text-align: center;
+  border-radius: 5px;
+  margin: 0px;
+  padding: 0px;
+  overflow: hidden;
+  width: 240px; /* Default */
+  height: 242px; /* Default */
+}
+
+.nodeCustomValues {
+  height: 100%; /* 8*24px + 20px */
+  display: flex;
+  flex-direction: column;
+}
+
+.nodeCustomTitle {
+  background-color: #ebebeb;
+  border-bottom: 1px solid black;
+  height: 30px;
+  line-height: 30px;
+  overflow: hidden;
+  text-wrap: nowrap;
+  text-overflow: ellipsis;
+  padding: 0px 5px;
+}
+
+.nodeCustomData {
+  height: calc(100% - 30px);
+  display: flex;
+  flex-direction: column;
+  padding: 5px 0px;
+  margin: auto 0px;
+}
+
+.nodeCustomData > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  padding: 0px 5px;
+}
+
+.nodeCustomData > div > b {
+  overflow: hidden;
+  text-wrap: nowrap;
+  text-overflow: ellipsis;
+}
+/* FOR NODES TypeTitle */
+.nodeTypeTitle {
+  width: 240px !important; /* Overwrite */
+  height: 50px !important; /* Overwrite */
+}
+.nodeCustomTitleTitle {
+  background-color: #ebebeb;
+  height: 50px;
+  line-height: 50px;
+  overflow: hidden;
+  text-wrap: nowrap;
+  text-overflow: ellipsis;
+  padding: 0px 5px;
+}
+/* FOR NODES TypeOne */
+.nodeTypeOne {
+  width: 240px !important; /* Overwrite */
+  height: 98px !important; /* Overwrite */
+}
+/* FOR NODES TypeTwo */
+.nodeTypeTwo {
+  width: 240px !important; /* Overwrite */
+  height: 146px !important; /* Overwrite */
+}
+/* FOR NODES TypeThree */
+.nodeTypeThree {
+  width: 240px !important; /* Overwrite */
+  height: 194px !important; /* Overwrite */
+}
+/* FOR NODES TypeFour */
+.nodeTypeFour {
+  width: 240px !important; /* Overwrite */
+  height: 242px !important; /* Overwrite */
+}
+/* FOR NODES TypeCircle */
+.nodeTypeCircle {
+  width: 100px !important; /* Overwrite */
+  height: 100px !important; /* Overwrite */
+  border: 1px solid black;
+  border-radius: 50%;
+}
+/* FOR NODES TypeDiamond */
+.nodeTypeDiamondContainer {
+  width: 100px !important; /* Overwrite */
+  height: 100px !important; /* Overwrite */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nodeTypeDiamond {
+  width: 72px;
+  height: 72px;
+  border: 1px solid black;
+  transform: rotate(45deg);
+}
+
+/* FOR NODE POPUP */
+
+.nodePopup {
+  position: absolute;
+  z-index: 999;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.2);
+  border: 1px solid black;
+  padding: 5px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.nodePopupInside {
+  margin: 10px;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow: hidden;
+  text-wrap: nowrap;
+  text-overflow: ellipsis;
+  padding: 10px;
+}
+
+.nodePopupInside > div {
+  overflow: hidden;
+  text-wrap: nowrap;
+  text-overflow: ellipsis;
+}
+
+.nodePopupInside > a {
+  overflow: hidden;
+  text-wrap: nowrap;
+  text-overflow: ellipsis;
+}
+
+.nodePopupTitle {
+  background-color: var(--grayNode);
+  border: 1px solid black;
+  border-radius: 5px;
+  text-wrap: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  padding: 0px 5px;
+}
+
+/* COLOR CONDITION CLASSES */
+
+/* Not animated classes */
+.nodeBgDefault {
+  background-color: var(--whiteNode);
+  color: black;
+}
+.nodeBgRed {
+  background-color: var(--redNode);
+}
+.nodeBgOrange {
+  background-color: var(--orangeNode);
+}
+.nodeBgYellow {
+  background-color: var(--yellowNode);
+}
+.nodeBgGreen {
+  background-color: var(--greenNode);
+}
+.nodeBgBlue {
+  background-color: var(--blueNode);
+}
+.nodeBgGray {
+  background-color: var(--grayNode);
+}
+
+/* Animated classes */
+
+.nodeBgRedBlink {
+  -webkit-animation: redBlink 0.2s infinite; /* Safari 4+ */
+  -moz-animation: redBlink 0.2s infinite; /* Fx 5+ */
+  -o-animation: redBlink 0.2s infinite; /* Opera 12+ */
+  animation: redBlink 0.2s infinite; /* IE 10+, Fx 29+ */
+}
+.nodeBgOrangeBlink {
+  -webkit-animation: orangeBlink 0.2s infinite; /* Safari 4+ */
+  -moz-animation: orangeBlink 0.2s infinite; /* Fx 5+ */
+  -o-animation: orangeBlink 0.2s infinite; /* Opera 12+ */
+  animation: orangeBlink 0.2s infinite; /* IE 10+, Fx 29+ */
+}
+.nodeBgYellowBlink {
+  -webkit-animation: yellowBlink 0.2s infinite; /* Safari 4+ */
+  -moz-animation: yellowBlink 0.2s infinite; /* Fx 5+ */
+  -o-animation: yellowBlink 0.2s infinite; /* Opera 12+ */
+  animation: yellowBlink 0.2s infinite; /* IE 10+, Fx 29+ */
+}
+.nodeBgGreenBlink {
+  -webkit-animation: greenBlink 0.2s infinite; /* Safari 4+ */
+  -moz-animation: greenBlink 0.2s infinite; /* Fx 5+ */
+  -o-animation: greenBlink 0.2s infinite; /* Opera 12+ */
+  animation: greenBlink 0.2s infinite; /* IE 10+, Fx 29+ */
+}
+.nodeBgBlueBlink {
+  -webkit-animation: blueBlink 0.2s infinite; /* Safari 4+ */
+  -moz-animation: blueBlink 0.2s infinite; /* Fx 5+ */
+  -o-animation: blueBlink 0.2s infinite; /* Opera 12+ */
+  animation: blueBlink 0.2s infinite; /* IE 10+, Fx 29+ */
+}
+.nodeBgGrayBlink {
+  -webkit-animation: grayBlink 0.2s infinite; /* Safari 4+ */
+  -moz-animation: grayBlink 0.2s infinite; /* Fx 5+ */
+  -o-animation: grayBlink 0.2s infinite; /* Opera 12+ */
+  animation: grayBlink 0.2s infinite; /* IE 10+, Fx 29+ */
+}
+
+/* Animations */
+@keyframes redBlink {
+  0%,
+  49% {
+    background-color: var(--whiteNode);
+  }
+  50%,
+  100% {
+    background-color: var(--redNode);
+  }
+}
+@keyframes orangeBlink {
+  0%,
+  49% {
+    background-color: var(--whiteNode);
+  }
+  50%,
+  100% {
+    background-color: var(--orangeNode);
+  }
+}
+@keyframes yellowBlink {
+  0%,
+  49% {
+    background-color: var(--whiteNode);
+  }
+  50%,
+  100% {
+    background-color: var(--yellowNode);
+  }
+}
+@keyframes greenBlink {
+  0%,
+  49% {
+    background-color: var(--whiteNode);
+  }
+  50%,
+  100% {
+    background-color: var(--greenNode);
+  }
+}
+@keyframes blueBlink {
+  0%,
+  49% {
+    background-color: var(--whiteNode);
+  }
+  50%,
+  100% {
+    background-color: var(--blueNode);
+  }
+}
+@keyframes grayBlink {
+  0%,
+  49% {
+    background-color: var(--whiteNode);
+  }
+  50%,
+  100% {
+    background-color: var(--grayNode);
+  }
+}
+
+/* CSS */
+.nodeButton {
+  background-color: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  color: #000000;
+  cursor: pointer;
+  margin: auto;
+  padding: 5px 10px;
+  position: relative;
+  text-decoration: none;
+  transition: all 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  width: 100%;
+  overflow: hidden;
+  text-wrap: nowrap;
+  text-overflow: ellipsis;
+}
+
+.nodeButton:hover,
+.nodeButton:focus {
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+}
+
+.nodeButton:active {
+  background-color: #f0f0f1;
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+}

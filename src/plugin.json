@@ -1,0 +1,42 @@
+{
+  "$schema": "https://raw.githubusercontent.com/grafana/grafana/main/docs/sources/developers/plugins/plugin.schema.json",
+  "type": "panel",
+  "name": "FlowX",
+  "id": "anilhut-flowx-panel",
+  "info": {
+    "keywords": ["panel"],
+    "description": "Flow charting visualization",
+    "author": {
+      "name": "Anıl Hut"
+    },
+    "logos": {
+      "small": "img/logo.svg",
+      "large": "img/logo.svg"
+    },
+    "links": [],
+    "screenshots": [
+      {
+        "name": "Screenshot 01",
+        "path": "img/Screenshot_01.png"
+      },
+      {
+        "name": "Screenshot 02",
+        "path": "img/Screenshot_02.png"
+      },
+      {
+        "name": "Screenshot 03",
+        "path": "img/Screenshot_03.png"
+      },
+      {
+        "name": "Screenshot 04",
+        "path": "img/Screenshot_04.png"
+      }
+    ],
+    "version": "%VERSION%",
+    "updated": "%TODAY%"
+  },
+  "dependencies": {
+    "grafanaDependency": ">=9.0.0",
+    "plugins": []
+  }
+}

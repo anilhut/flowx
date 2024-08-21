@@ -1,0 +1,334 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": {
+          "type": "grafana",
+          "uid": "-- Grafana --"
+        },
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "id": 2,
+  "links": [],
+  "panels": [
+    {
+      "datasource": {
+        "type": "marcusolsson-static-datasource",
+        "uid": "U0HP2Rv4z"
+      },
+      "gridPos": {
+        "h": 24,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "id": 1,
+      "options": {
+        "backgroundColor": "#ffffff",
+        "backgroundGap": 28,
+        "backgroundSize": 1,
+        "backgroundType": "None",
+        "backgroundTypeColor": "#000000",
+        "edgeAnimation": true,
+        "edgeColor": "#000000",
+        "edgeStroke": 1,
+        "edgeType": "default",
+        "hideAttribution": true,
+        "isDraggable": true,
+        "layoutDirection": "TB",
+        "panelBackgroundColor": "#FFFFFF",
+        "popupFieldName": "key",
+        "seriesCountSize": "sm",
+        "showControls": true,
+        "showLayoutOptions": true,
+        "showMiniMap": true,
+        "showPopup": true,
+        "showSeriesCount": false,
+        "text": "Denemeee açıklaması"
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "marcusolsson-static-datasource",
+            "uid": "U0HP2Rv4z"
+          },
+          "frame": {
+            "fields": [
+              {
+                "config": {},
+                "name": "id",
+                "type": "string",
+                "values": ["Start", "A", "AA", "B", "A1", "A2", "B1", "BB", "B2", "A11", "B3"]
+              },
+              {
+                "config": {},
+                "name": "type",
+                "type": "string",
+                "values": ["title", "two", "circle", "two", "one", "one", "three", "diamond", "four", "one", "two"]
+              },
+              {
+                "config": {},
+                "name": "title",
+                "type": "string",
+                "values": ["Starting point", "A", "A", "B", "A1", "A2", "B1", "A", "B2", "A11", "B3"]
+              },
+              {
+                "config": {},
+                "name": "value1_header",
+                "type": "string",
+                "values": [
+                  "",
+                  "value1 header",
+                  "value1 header",
+                  "value1 header",
+                  "value1 header",
+                  "value1 header",
+                  "value1 header",
+                  "value1 header",
+                  "value1 header",
+                  "value1 header",
+                  "value1 header"
+                ]
+              },
+              {
+                "config": {},
+                "name": "value1_data",
+                "type": "string",
+                "values": [
+                  "",
+                  "value1 data",
+                  "value1 data",
+                  "value1 data",
+                  "value1 data",
+                  "value1 data",
+                  "value1 data",
+                  "value1 data",
+                  "value1 data",
+                  "value1 data",
+                  "value1 data"
+                ]
+              },
+              {
+                "config": {},
+                "name": "value1_url",
+                "type": "string",
+                "values": [
+                  "",
+                  "https://google.com",
+                  "https://google.com",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "https://google.com",
+                  "",
+                  "",
+                  ""
+                ]
+              },
+              {
+                "config": {},
+                "name": "value2_header",
+                "type": "string",
+                "values": [
+                  "",
+                  "value2 header",
+                  "value2 header",
+                  "value2 header",
+                  "value2 header",
+                  "value2 header",
+                  "value2 header",
+                  "value2 header",
+                  "value2 header",
+                  "value2 header",
+                  "value2 header"
+                ]
+              },
+              {
+                "config": {},
+                "name": "value2_data",
+                "type": "string",
+                "values": [
+                  "",
+                  "value2 data",
+                  "value2 data",
+                  "value2 data",
+                  "value2 data",
+                  "value2 data",
+                  "value2 data",
+                  "value2 data",
+                  "value2 data",
+                  "value2 data",
+                  "value2 data"
+                ]
+              },
+              {
+                "config": {},
+                "name": "value3_header",
+                "type": "string",
+                "values": [
+                  "",
+                  "value3 header",
+                  "value3 header",
+                  "value3 header",
+                  "value3 header",
+                  "value3 header",
+                  "value3 header",
+                  "value3 header",
+                  "value3 header",
+                  "value3 header",
+                  "value3 header"
+                ]
+              },
+              {
+                "config": {},
+                "name": "value3_data",
+                "type": "string",
+                "values": [
+                  "",
+                  "value3 data",
+                  "value3 data",
+                  "value3 data",
+                  "value3 data",
+                  "value3 data",
+                  "value3 data",
+                  "value3 data",
+                  "value3 data",
+                  "value3 data",
+                  "value3 data"
+                ]
+              },
+              {
+                "config": {},
+                "name": "value4_header",
+                "type": "string",
+                "values": [
+                  "",
+                  "value4 header",
+                  "value4 header",
+                  "value4 header",
+                  "value4 header",
+                  "value4 header",
+                  "value4 header",
+                  "value4 header",
+                  "value4 header",
+                  "value4 header",
+                  "value4 header"
+                ]
+              },
+              {
+                "config": {},
+                "name": "value4_data",
+                "type": "string",
+                "values": [
+                  "",
+                  "value4 data",
+                  "value4 data",
+                  "value4 data",
+                  "value4 data",
+                  "value4 data",
+                  "value4 data",
+                  "value4 data",
+                  "value4 data",
+                  "value4 data",
+                  "value4 data"
+                ]
+              },
+              {
+                "config": {},
+                "name": "color_condition",
+                "type": "string",
+                "values": ["", "", "red", "", "", "", "blue", "orange", "red_blink", "green", "yellow"]
+              },
+              {
+                "config": {},
+                "name": "url",
+                "type": "string",
+                "values": [
+                  "",
+                  "https://google.com",
+                  "https://google.com",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "https://google.com",
+                  "",
+                  "",
+                  ""
+                ]
+              },
+              {
+                "config": {},
+                "name": "url_label",
+                "type": "string",
+                "values": ["", "Google.com", "Google.com", "", "", "", "", "Google.com", "", "", ""]
+              }
+            ],
+            "meta": {},
+            "name": "Node"
+          },
+          "refId": "Node"
+        },
+        {
+          "datasource": {
+            "type": "marcusolsson-static-datasource",
+            "uid": "U0HP2Rv4z"
+          },
+          "frame": {
+            "fields": [
+              {
+                "config": {},
+                "name": "id",
+                "type": "string",
+                "values": ["StartA", "StartB", "AA1", "AA2", "BB1", "BB2", "A1A11", "A11A1", "", "", "", ""]
+              },
+              {
+                "config": {},
+                "name": "source",
+                "type": "string",
+                "values": ["Start", "Start", "A", "A", "B", "B", "A1", "A11", "Start", "AA", "B", "BB"]
+              },
+              {
+                "config": {},
+                "name": "target",
+                "type": "string",
+                "values": ["A", "B", "A1", "A2", "B1", "B2", "A11", "A1", "AA", "A2", "BB", "B3"]
+              }
+            ],
+            "meta": {},
+            "name": "Edge"
+          },
+          "hide": false,
+          "refId": "Edge"
+        }
+      ],
+      "type": "anilhut-flowx-panel"
+    }
+  ],
+  "schemaVersion": 39,
+  "tags": [],
+  "templating": {
+    "list": []
+  },
+  "time": {
+    "from": "now-15m",
+    "to": "now"
+  },
+  "timepicker": {},
+  "timezone": "browser",
+  "title": "Flowx Çalışması",
+  "uid": "bdt7sgguxzojkb",
+  "version": 1,
+  "weekStart": ""
+}
