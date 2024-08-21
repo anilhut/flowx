@@ -1,114 +1,124 @@
-# Grafana panel plugin template
+# FlowX
 
-This template is a starting point for building a panel plugin for Grafana.
+The FlowX Grafana panel enables the rendering of interactive flowcharts derived from directed graph data, consisting of nodes and edges. FlowX supports a variety of node types, each designed for specific use cases. Grafana provides a Node Graph panel for visualizing directed graph data, but its visualization capabilities are quite limited. To address the need for more advanced and rich visualizations of directed graphs, this panel has been developed. It leverages ReactFlow and DagreJS to deliver enhanced visualization features.
 
-## What are Grafana panel plugins?
+## Installation
 
-Panel plugins allow you to add new types of visualizations to your dashboard, such as maps, clocks, pie charts, lists, and more.
+Installing plugin on Grafana Cloud / Local Grafana - https://grafana.com/docs/grafana/latest/plugins/installation/
 
-Use panel plugins when you want to do things like visualize data returned by data source queries, navigate between dashboards, or control external systems (such as smart home devices).
+## Configuration
 
-## Getting started
+To use the FlowX panel, 2 different queries called "Node" and "Edge" must be added.
+The "Node" query is for determining the boxes, circles and diamonds we will draw.
+The "Edge" query is for determining the relationship between the nodes we draw.
+The expected columns in Node and Edge queries are as shared below.
+All data to come to the columns are optional (yes, including IDs, if an empty row comes, an empty node with no relationship will be drawn.)
+**The expected data type is string for all columns.**
 
-### Frontend
+## Node
 
-1. Install dependencies
+The following table describes expected columns of the Node query:
 
-   ```bash
-   npm install
-   ```
+| Columns         | Supported Values                                                                                                                | Description                                                                                                                                             |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| id              |                                                                                                                                 | Unique identifier of the Node. Each Node to be drawn must have a unique ID. These ID's will be used in the Source or Target fields in the "Edge" query. |
+| type            | `title` `one` `two` `three` `four` `circle` `diamond`                                                                           | Determines the type of Node. The Node is drawn according to this data. However, if the popup is active, all values will appear there. Default: `four`   |
+| title           |                                                                                                                                 | Title of the Node.                                                                                                                                      |
+| value1_header   |                                                                                                                                 | The header that will come for the first value of the node.                                                                                              |
+| value1_data     |                                                                                                                                 | The data that will come for the first value of the node.                                                                                                |
+| value1_url      |                                                                                                                                 | The URL that will come for the first value of the node. "Show Popup" must be on to use.                                                                 |
+| value2_header   |                                                                                                                                 | The header that will come for the second value of the node.                                                                                             |
+| value2_data     |                                                                                                                                 | The data that will come for the second value of the node.                                                                                               |
+| value2_url      |                                                                                                                                 | The URL that will come for the second value of the node. "Show Popup" must be on to use.                                                                |
+| value3_header   |                                                                                                                                 | The header that will come for the third value of the node.                                                                                              |
+| value3_data     |                                                                                                                                 | The data that will come for the third value of the node.                                                                                                |
+| value3_url      |                                                                                                                                 | The URL that will come for the third value of the node. "Show Popup" must be on to use.                                                                 |
+| value4_header   |                                                                                                                                 | The header that will come for the fourth value of the node.                                                                                             |
+| value4_data     |                                                                                                                                 | The data that will come for the fourth value of the node.                                                                                               |
+| value4_url      |                                                                                                                                 | The URL that will come for the fourth value of the node. "Show Popup" must be on to use.                                                                |
+| color_condition | `red` `red_blink` `orange` `orange_blink` `yellow` `yellow_blink` `green` `green_blink` `blue` `blue_blink` `gray` `gray_blink` | Field that determines the background color of the node. Blink ones flash. Default: _null_                                                               |
+| url             |                                                                                                                                 | Field that can be used for the node's own URL. "Show Popup" must be on to use.                                                                          |
+| url_label       |                                                                                                                                 | The label that will replace the node's own URL.                                                                                                         |
 
-2. Build plugin in development mode and run in watch mode
+## Edge
 
-   ```bash
-   npm run dev
-   ```
+The following table describes expected columns of the Edge query:
 
-3. Build plugin in production mode
+| Columns | Description                                                                 |
+| ------- | --------------------------------------------------------------------------- |
+| id      | Unique identifier of the Edge. Each Edge to be drawn must have a unique ID. |
+| source  | Source Node ID                                                              |
+| target  | Target Node ID                                                              |
 
-   ```bash
-   npm run build
-   ```
+<br/>
 
-4. Run the tests (using Jest)
+#### Supported Types of Node
 
-   ```bash
-   # Runs the tests and watches for changes, requires git init first
-   npm run test
+| type    | Description                                                                                                                                                                                                                                   |
+| ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| _null_  | Default, node type will be set as 'four'.                                                                                                                                                                                                     |
+| title   | Node showing only `title` column. But if "Show Popup" option is on, other title, data, url columns will be shown in popup.                                                                                                                    |
+| one     | Node showing `value1_header`, `value1_data` columns. But if "Show Popup" option is on, other title, data, url columns will be shown in popup.                                                                                                 |
+| two     | Node showing `value1_header`, `value1_data`, `value2_header`, `value2_data` columns. But if "Show Popup" option is on, other title, data, url columns will be shown in popup.                                                                 |
+| three   | Node showing `value1_header`, `value1_data`, `value2_header`, `value2_data`, `value3_header`, `value3_data` columns. But if "Show Popup" option is on, other title, data, url columns will be shown in popup.                                 |
+| four    | Node showing `value1_header`, `value1_data`, `value2_header`, `value2_data`, `value3_header`, `value3_data`, `value4_header`, `value4_data` columns. But if "Show Popup" option is on, other title, data, url columns will be shown in popup. |
+| circle  | A node with circle shape that does not display columns. But if "Show Popup" option is on, other title, data, url columns will be shown in popup.                                                                                              |
+| diamond | A node with diamond shape that does not display columns. But if "Show Popup" option is on, other title, data, url columns will be shown in popup.                                                                                             |
 
-   # Exits after running all the tests
-   npm run test:ci
-   ```
+<br/>
 
-5. Spin up a Grafana instance and run the plugin inside it (using Docker)
+#### Supported Colors of Node
 
-   ```bash
-   npm run server
-   ```
+| color_condition | Description                           |
+| --------------- | ------------------------------------- |
+| _null_          | Default, paints the background white. |
+| red             | Paints the background #f2495c.        |
+| red_blink       | Blinks between #f2495c and white.     |
+| orange          | Paints the background #ff9830.        |
+| orange_blink    | Blinks between #ff9830 and white.     |
+| yellow          | Paints the background #fade2a.        |
+| yellow_blink    | Blinks between #fade2a and white.     |
+| green           | Paints the background #73bf69.        |
+| green_blink     | Blinks between #73bf69 and white.     |
+| blue            | Paints the background #5794f2.        |
+| blue_blink      | Blinks between #5794f2 and white.     |
+| gray            | Paints the background #ebebeb.        |
+| gray_blink      | Blinks between #ebebeb and white.     |
 
-6. Run the E2E tests (using Cypress)
+## FlowX Panel Options
 
-   ```bash
-   # Spins up a Grafana instance first that we tests against
-   npm run server
+The following table describes FlowX panel options:
 
-   # Starts the tests
-   npm run e2e
-   ```
+| Category            | Option                 | Values                                                  | Default         | Description                                                                                         |
+| ------------------- | ---------------------- | ------------------------------------------------------- | --------------- | --------------------------------------------------------------------------------------------------- |
+| Background Settings | Background Color       | Grafana Color Palette                                   | `#ffffff`       |                                                                                                     |
+| Background Settings | Background Type        | `None` `Dots` `Cross` `Lines`                           | `None`          |                                                                                                     |
+| Background Settings | Type Gap               | 1 >= `Type Gap` <= 50                                   | `28`            |                                                                                                     |
+| Background Settings | Type Size              | 1 >= `Type Size` <= 10                                  | `1`             |                                                                                                     |
+| Background Settings | Type Color             | Grafana Color Palette                                   | `#000000`       |                                                                                                     |
+| Layout Settings     | Layout Direction       | `Top to Bottom` `Left to Right`                         | `Top to Bottom` |                                                                                                     |
+| Layout Settings     | Show Layout Options    | `on` `off`                                              | `on`            |                                                                                                     |
+| Layout Settings     | Show Mini Map          | `on` `off`                                              | `on`            |                                                                                                     |
+| Layout Settings     | Show Controls          | `on` `off`                                              | `on`            |                                                                                                     |
+| Layout Settings     | Hide Attribution (Pro) | `on` `off`                                              | `off`           | Please only hide the attribution if you are subscribed to React Flow Pro: https://reactflow.dev/pro |
+| Layout Settings     | Maximum Zoom           | 1 >= `Maximum Zoom` <= 10                               | `4`             |                                                                                                     |
+| Layout Settings     | Minimum Zoom           | 0.1 >= `Minimum Zoom` <= 1                              | `0.1`           |                                                                                                     |
+| Node Settings       | Draggable Nodes        | `on` `off`                                              | `off`           |                                                                                                     |
+| Node Settings       | Show Popup             | `on` `off`                                              | `off`           | This option must be turned on to use Node or Value URLs.                                            |
+| Edge Settings       | Edge Animation         | `on` `off`                                              | `on`            |                                                                                                     |
+| Edge Settings       | Edge Type              | `Default` `Straight` `Step` `Smoothstep` `Simplebezier` | `Default`       |                                                                                                     |
+| Edge Settings       | Edge Stroke            | 1 >= `Edge Stroke` <= 10                                | `1`             |                                                                                                     |
+| Edge Settings       | Edge Color             | Grafana Color Palette                                   | `#000000`       |                                                                                                     |
 
-7. Run the linter
+## Contact
 
-   ```bash
-   npm run lint
+Write on [Linkedin](https://www.linkedin.com/in/anilhut/)
 
-   # or
+## Credits and References
 
-   npm run lint:fix
-   ```
-
-# Distributing your plugin
-
-When distributing a Grafana plugin either within the community or privately the plugin must be signed so the Grafana application can verify its authenticity. This can be done with the `@grafana/sign-plugin` package.
-
-_Note: It's not necessary to sign a plugin during development. The docker development environment that is scaffolded with `@grafana/create-plugin` caters for running the plugin without a signature._
-
-## Initial steps
-
-Before signing a plugin please read the Grafana [plugin publishing and signing criteria](https://grafana.com/legal/plugins/#plugin-publishing-and-signing-criteria) documentation carefully.
-
-`@grafana/create-plugin` has added the necessary commands and workflows to make signing and distributing a plugin via the grafana plugins catalog as straightforward as possible.
-
-Before signing a plugin for the first time please consult the Grafana [plugin signature levels](https://grafana.com/legal/plugins/#what-are-the-different-classifications-of-plugins) documentation to understand the differences between the types of signature level.
-
-1. Create a [Grafana Cloud account](https://grafana.com/signup).
-2. Make sure that the first part of the plugin ID matches the slug of your Grafana Cloud account.
-   - _You can find the plugin ID in the `plugin.json` file inside your plugin directory. For example, if your account slug is `acmecorp`, you need to prefix the plugin ID with `acmecorp-`._
-3. Create a Grafana Cloud API key with the `PluginPublisher` role.
-4. Keep a record of this API key as it will be required for signing a plugin
-
-## Signing a plugin
-
-### Using Github actions release workflow
-
-If the plugin is using the github actions supplied with `@grafana/create-plugin` signing a plugin is included out of the box. The [release workflow](./.github/workflows/release.yml) can prepare everything to make submitting your plugin to Grafana as easy as possible. Before being able to sign the plugin however a secret needs adding to the Github repository.
-
-1. Please navigate to "settings > secrets > actions" within your repo to create secrets.
-2. Click "New repository secret"
-3. Name the secret "GRAFANA_API_KEY"
-4. Paste your Grafana Cloud API key in the Secret field
-5. Click "Add secret"
-
-#### Push a version tag
-
-To trigger the workflow we need to push a version tag to github. This can be achieved with the following steps:
-
-1. Run `npm version <major|minor|patch>`
-2. Run `git push origin main --follow-tags`
-
-## Learn more
-
-Below you can find source code for existing app plugins and other related documentation.
-
-- [Basic panel plugin example](https://github.com/grafana/grafana-plugin-examples/tree/master/examples/panel-basic#readme)
-- [`plugin.json` documentation](https://grafana.com/developers/plugin-tools/reference/plugin-json)
-- [How to sign a plugin?](https://grafana.com/developers/plugin-tools/publish-a-plugin/sign-a-plugin)
+1. [ReactFlow](https://reactflow.dev/)
+2. [DagreJS](https://github.com/dagrejs/dagre)
+3. [Build a panel plugin tutorial](https://grafana.com/tutorials/build-a-panel-plugin)
+4. [Grafana documentation](https://grafana.com/docs/)
+5. [Grafana Tutorials](https://grafana.com/tutorials/)
+6. [Grafana UI Library](https://developers.grafana.com/ui)
