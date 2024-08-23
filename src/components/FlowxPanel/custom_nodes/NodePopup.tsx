@@ -32,7 +32,6 @@ interface NodePopupProps {
 }
 
 const NodePopup: React.FC<NodePopupProps> = ({ clickedNode, onCancelClick }) => {
-  console.log('clickedNode :', clickedNode);
   const { data } = clickedNode;
 
   const bgColorCondition = data.bgColorCondition;
