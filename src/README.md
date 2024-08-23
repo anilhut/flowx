@@ -112,7 +112,7 @@ The following table describes FlowX panel options:
 
 ## Contact
 
-Write on [Linkedin](https://www.linkedin.com/in/anilhut/)
+Write on [Linkedin](https://www.linkedin.com/in/anilhut)
 
 ## Credits and References
 
