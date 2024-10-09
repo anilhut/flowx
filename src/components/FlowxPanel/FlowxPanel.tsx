@@ -172,7 +172,7 @@ export const FlowxPanel: React.FC<Props> = ({ options, data, fieldConfig, id }) 
       let n = {
         id: `nullIDHandle${i}`,
         data: {
-          bgColorCondition: 'nodeBgDefault',
+          bgColorCondition: 'anil-flowx-nodeBgDefault',
         },
         position: { x: 0, y: 0 },
         type: 'type_four',
@@ -195,43 +195,43 @@ export const FlowxPanel: React.FC<Props> = ({ options, data, fieldConfig, id }) 
         if (columnObj.name === 'color_condition') {
           switch (row) {
             case 'red':
-              nodes[index].data.bgColorCondition = 'nodeBgRed';
+              nodes[index].data.bgColorCondition = 'anil-flowx-nodeBgRed';
               break;
             case 'red_blink':
-              nodes[index].data.bgColorCondition = 'nodeBgRedBlink';
+              nodes[index].data.bgColorCondition = 'anil-flowx-nodeBgRedBlink';
               break;
             case 'orange':
-              nodes[index].data.bgColorCondition = 'nodeBgOrange';
+              nodes[index].data.bgColorCondition = 'anil-flowx-nodeBgOrange';
               break;
             case 'orange_blink':
-              nodes[index].data.bgColorCondition = 'nodeBgOrangeBlink';
+              nodes[index].data.bgColorCondition = 'anil-flowx-nodeBgOrangeBlink';
               break;
             case 'yellow':
-              nodes[index].data.bgColorCondition = 'nodeBgYellow';
+              nodes[index].data.bgColorCondition = 'anil-flowx-nodeBgYellow';
               break;
             case 'yellow_blink':
-              nodes[index].data.bgColorCondition = 'nodeBgYellowBlink';
+              nodes[index].data.bgColorCondition = 'anil-flowx-nodeBgYellowBlink';
               break;
             case 'green':
-              nodes[index].data.bgColorCondition = 'nodeBgGreen';
+              nodes[index].data.bgColorCondition = 'anil-flowx-nodeBgGreen';
               break;
             case 'green_blink':
-              nodes[index].data.bgColorCondition = 'nodeBgGreenBlink';
+              nodes[index].data.bgColorCondition = 'anil-flowx-nodeBgGreenBlink';
               break;
             case 'blue':
-              nodes[index].data.bgColorCondition = 'nodeBgBlue';
+              nodes[index].data.bgColorCondition = 'anil-flowx-nodeBgBlue';
               break;
             case 'blue_blink':
-              nodes[index].data.bgColorCondition = 'nodeBgBlueBlink';
+              nodes[index].data.bgColorCondition = 'anil-flowx-nodeBgBlueBlink';
               break;
             case 'gray':
-              nodes[index].data.bgColorCondition = 'nodeBgGray';
+              nodes[index].data.bgColorCondition = 'anil-flowx-nodeBgGray';
               break;
             case 'gray_blink':
-              nodes[index].data.bgColorCondition = 'nodeBgGrayBlink';
+              nodes[index].data.bgColorCondition = 'anil-flowx-nodeBgGrayBlink';
               break;
             default:
-              nodes[index].data.bgColorCondition = 'nodeBgDefault';
+              nodes[index].data.bgColorCondition = 'anil-flowx-nodeBgDefault';
           }
         }
         if (columnObj.name === 'type') {
@@ -362,7 +362,7 @@ export const FlowxPanel: React.FC<Props> = ({ options, data, fieldConfig, id }) 
 
   return (
     <>
-      <div className="panelContainer" style={{ backgroundColor: backgroundColor }}>
+      <div className="anil-flowx-panelContainer" style={{ backgroundColor: backgroundColor }}>
         {isNodeClicked && clickedNode && (
           <>
             {/* @ts-ignore */}
@@ -389,7 +389,7 @@ export const FlowxPanel: React.FC<Props> = ({ options, data, fieldConfig, id }) 
           {showLayoutOptions && (
             <Panel position="top-right">
               <button
-                className="nodeButton"
+                className="anil-flowx-nodeButton"
                 onClick={() => {
                   onLayout('TB');
                 }}
@@ -397,7 +397,7 @@ export const FlowxPanel: React.FC<Props> = ({ options, data, fieldConfig, id }) 
                 Top to Bottom
               </button>
               <button
-                className="nodeButton"
+                className="anil-flowx-nodeButton"
                 onClick={() => {
                   onLayout('LR');
                 }}

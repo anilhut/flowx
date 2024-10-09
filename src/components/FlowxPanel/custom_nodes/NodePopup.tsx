@@ -38,11 +38,11 @@ const NodePopup: React.FC<NodePopupProps> = ({ clickedNode, onCancelClick }) => 
 
   return (
     <>
-      <div className={`nodePopup ${bgColorCondition}`} style={{ color: 'black' }}>
-        <div className="nodePopupInside">
+      <div className={`anil-flowx-nodePopup ${bgColorCondition}`} style={{ color: 'black' }}>
+        <div className="anil-flowx-nodePopupInside">
           {data.title && (
             <>
-              <div className="nodePopupTitle" title={data.title}>
+              <div className="anil-flowx-nodePopupTitle" title={data.title}>
                 {data.title}
               </div>
             </>
@@ -50,7 +50,7 @@ const NodePopup: React.FC<NodePopupProps> = ({ clickedNode, onCancelClick }) => 
 
           {data.url && (
             <a
-              className="nodeButton"
+              className="anil-flowx-nodeButton"
               href={data.url}
               target="_blank"
               rel="noopener noreferrer"
@@ -120,7 +120,7 @@ const NodePopup: React.FC<NodePopupProps> = ({ clickedNode, onCancelClick }) => 
             </div>
           )}
 
-          <button className="nodeButton" onClick={onCancelClick}>
+          <button className="anil-flowx-nodeButton" onClick={onCancelClick}>
             Cancel
           </button>
         </div>

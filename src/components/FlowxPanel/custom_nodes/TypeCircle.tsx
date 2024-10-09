@@ -13,7 +13,7 @@ const TypeCircle: React.FC<CustomNodeProps> = (props) => {
   const { bgColorCondition } = props.data;
 
   return (
-    <div className={`nodeTypeCircle ${bgColorCondition}`}>
+    <div className={`anil-flowx-nodeTypeCircle ${bgColorCondition}`}>
       {props.targetPosition === 'top' && <Handle type="target" position={Position.Top} />}
       {props.targetPosition === 'left' && <Handle type="target" position={Position.Left} />}
       {props.sourcePosition === 'bottom' && <Handle type="source" position={Position.Bottom} />}

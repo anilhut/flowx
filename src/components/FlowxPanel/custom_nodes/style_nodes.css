@@ -165,7 +165,7 @@
 }
 
 .anil-flowx-nodePopupTitle {
-  background-color: var(--grayNode);
+  background-color: var(--anil-flowx-grayNode);
   border: 1px solid black;
   border-radius: 5px;
   text-wrap: nowrap;
@@ -178,26 +178,26 @@
 
 /* Not animated classes */
 .anil-flowx-nodeBgDefault {
-  background-color: var(--whiteNode);
+  background-color: var(--anil-flowx-whiteNode);
   color: black;
 }
 .anil-flowx-nodeBgRed {
-  background-color: var(--redNode);
+  background-color: var(--anil-flowx-redNode);
 }
 .anil-flowx-nodeBgOrange {
-  background-color: var(--orangeNode);
+  background-color: var(--anil-flowx-orangeNode);
 }
 .anil-flowx-nodeBgYellow {
-  background-color: var(--yellowNode);
+  background-color: var(--anil-flowx-yellowNode);
 }
 .anil-flowx-nodeBgGreen {
-  background-color: var(--greenNode);
+  background-color: var(--anil-flowx-greenNode);
 }
 .anil-flowx-nodeBgBlue {
-  background-color: var(--blueNode);
+  background-color: var(--anil-flowx-blueNode);
 }
 .anil-flowx-nodeBgGray {
-  background-color: var(--grayNode);
+  background-color: var(--anil-flowx-grayNode);
 }
 
 /* Animated classes */
@@ -290,7 +290,7 @@
     background-color: var(--anil-flowx-blueNode);
   }
 }
-@keyframes grayBlink {
+@keyframes anil-flowx-grayBlink {
   0%,
   49% {
     background-color: var(--anil-flowx-whiteNode);

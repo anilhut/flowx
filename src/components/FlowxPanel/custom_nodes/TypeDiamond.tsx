@@ -13,12 +13,12 @@ const TypeDiamond: React.FC<CustomNodeProps> = (props) => {
   const { bgColorCondition } = props.data;
 
   return (
-    <div className={`nodeTypeDiamondContainer`}>
+    <div className={`anil-flowx-nodeTypeDiamondContainer`}>
       {props.targetPosition === 'top' && <Handle type="target" position={Position.Top} />}
       {props.targetPosition === 'left' && <Handle type="target" position={Position.Left} />}
       {props.sourcePosition === 'bottom' && <Handle type="source" position={Position.Bottom} />}
       {props.sourcePosition === 'right' && <Handle type="source" position={Position.Right} />}
-      <div className={`nodeTypeDiamond ${bgColorCondition}`}></div>
+      <div className={`anil-flowx-nodeTypeDiamond ${bgColorCondition}`}></div>
     </div>
   );
 };
