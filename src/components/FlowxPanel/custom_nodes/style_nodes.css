@@ -1,14 +1,14 @@
 :root {
-  --whiteNode: #ffffff;
-  --redNode: #f2495c;
-  --orangeNode: #ff9830;
-  --yellowNode: #fade2a;
-  --greenNode: #73bf69;
-  --blueNode: #5794f2;
-  --grayNode: #ebebeb;
+  --anil-flowx-whiteNode: #ffffff;
+  --anil-flowx-redNode: #f2495c;
+  --anil-flowx-orangeNode: #ff9830;
+  --anil-flowx-yellowNode: #fade2a;
+  --anil-flowx-greenNode: #73bf69;
+  --anil-flowx-blueNode: #5794f2;
+  --anil-flowx-grayNode: #ebebeb;
 }
 
-.panelContainer {
+.anil-flowx-panelContainer {
   width: 100%;
   height: 100%;
   color: black;
@@ -17,7 +17,7 @@
 }
 
 /*FOR CUSTOM NODES GENERAL*/
-.nodeCustomContainer {
+.anil-flowx-nodeCustomContainer {
   border: 1px solid black;
   text-align: center;
   border-radius: 5px;
@@ -28,13 +28,13 @@
   height: 242px; /* Default */
 }
 
-.nodeCustomValues {
+.anil-flowx-nodeCustomValues {
   height: 100%; /* 8*24px + 20px */
   display: flex;
   flex-direction: column;
 }
 
-.nodeCustomTitle {
+.anil-flowx-nodeCustomTitle {
   background-color: #ebebeb;
   border-bottom: 1px solid black;
   height: 30px;
@@ -45,7 +45,7 @@
   padding: 0px 5px;
 }
 
-.nodeCustomData {
+.anil-flowx-nodeCustomData {
   height: calc(100% - 30px);
   display: flex;
   flex-direction: column;
@@ -53,7 +53,7 @@
   margin: auto 0px;
 }
 
-.nodeCustomData > div {
+.anil-flowx-nodeCustomData > div {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -61,17 +61,17 @@
   padding: 0px 5px;
 }
 
-.nodeCustomData > div > b {
+.anil-flowx-nodeCustomData > div > b {
   overflow: hidden;
   text-wrap: nowrap;
   text-overflow: ellipsis;
 }
 /* FOR NODES TypeTitle */
-.nodeTypeTitle {
+.anil-flowx-nodeTypeTitle {
   width: 240px !important; /* Overwrite */
   height: 50px !important; /* Overwrite */
 }
-.nodeCustomTitleTitle {
+.anil-flowx-nodeCustomTitleTitle {
   background-color: #ebebeb;
   height: 50px;
   line-height: 50px;
@@ -81,41 +81,41 @@
   padding: 0px 5px;
 }
 /* FOR NODES TypeOne */
-.nodeTypeOne {
+.anil-flowx-nodeTypeOne {
   width: 240px !important; /* Overwrite */
   height: 98px !important; /* Overwrite */
 }
 /* FOR NODES TypeTwo */
-.nodeTypeTwo {
+.anil-flowx-nodeTypeTwo {
   width: 240px !important; /* Overwrite */
   height: 146px !important; /* Overwrite */
 }
 /* FOR NODES TypeThree */
-.nodeTypeThree {
+.anil-flowx-nodeTypeThree {
   width: 240px !important; /* Overwrite */
   height: 194px !important; /* Overwrite */
 }
 /* FOR NODES TypeFour */
-.nodeTypeFour {
+.anil-flowx-nodeTypeFour {
   width: 240px !important; /* Overwrite */
   height: 242px !important; /* Overwrite */
 }
 /* FOR NODES TypeCircle */
-.nodeTypeCircle {
+.anil-flowx-nodeTypeCircle {
   width: 100px !important; /* Overwrite */
   height: 100px !important; /* Overwrite */
   border: 1px solid black;
   border-radius: 50%;
 }
 /* FOR NODES TypeDiamond */
-.nodeTypeDiamondContainer {
+.anil-flowx-nodeTypeDiamondContainer {
   width: 100px !important; /* Overwrite */
   height: 100px !important; /* Overwrite */
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.nodeTypeDiamond {
+.anil-flowx-nodeTypeDiamond {
   width: 72px;
   height: 72px;
   border: 1px solid black;
@@ -124,7 +124,7 @@
 
 /* FOR NODE POPUP */
 
-.nodePopup {
+.anil-flowx-nodePopup {
   position: absolute;
   z-index: 999;
   top: 50%;
@@ -138,7 +138,7 @@
   text-align: center;
 }
 
-.nodePopupInside {
+.anil-flowx-nodePopupInside {
   margin: 10px;
   background-color: white;
   border: 1px solid black;
@@ -152,19 +152,19 @@
   padding: 10px;
 }
 
-.nodePopupInside > div {
+.anil-flowx-nodePopupInside > div {
   overflow: hidden;
   text-wrap: nowrap;
   text-overflow: ellipsis;
 }
 
-.nodePopupInside > a {
+.anil-flowx-nodePopupInside > a {
   overflow: hidden;
   text-wrap: nowrap;
   text-overflow: ellipsis;
 }
 
-.nodePopupTitle {
+.anil-flowx-nodePopupTitle {
   background-color: var(--grayNode);
   border: 1px solid black;
   border-radius: 5px;
@@ -177,132 +177,131 @@
 /* COLOR CONDITION CLASSES */
 
 /* Not animated classes */
-.nodeBgDefault {
+.anil-flowx-nodeBgDefault {
   background-color: var(--whiteNode);
   color: black;
 }
-.nodeBgRed {
+.anil-flowx-nodeBgRed {
   background-color: var(--redNode);
 }
-.nodeBgOrange {
+.anil-flowx-nodeBgOrange {
   background-color: var(--orangeNode);
 }
-.nodeBgYellow {
+.anil-flowx-nodeBgYellow {
   background-color: var(--yellowNode);
 }
-.nodeBgGreen {
+.anil-flowx-nodeBgGreen {
   background-color: var(--greenNode);
 }
-.nodeBgBlue {
+.anil-flowx-nodeBgBlue {
   background-color: var(--blueNode);
 }
-.nodeBgGray {
+.anil-flowx-nodeBgGray {
   background-color: var(--grayNode);
 }
 
 /* Animated classes */
 
-.nodeBgRedBlink {
-  -webkit-animation: redBlink 0.2s infinite; /* Safari 4+ */
-  -moz-animation: redBlink 0.2s infinite; /* Fx 5+ */
-  -o-animation: redBlink 0.2s infinite; /* Opera 12+ */
-  animation: redBlink 0.2s infinite; /* IE 10+, Fx 29+ */
+.anil-flowx-nodeBgRedBlink {
+  -webkit-animation: anil-flowx-redBlink 0.2s infinite; /* Safari 4+ */
+  -moz-animation: anil-flowx-redBlink 0.2s infinite; /* Fx 5+ */
+  -o-animation: anil-flowx-redBlink 0.2s infinite; /* Opera 12+ */
+  animation: anil-flowx-redBlink 0.2s infinite; /* IE 10+, Fx 29+ */
 }
-.nodeBgOrangeBlink {
-  -webkit-animation: orangeBlink 0.2s infinite; /* Safari 4+ */
-  -moz-animation: orangeBlink 0.2s infinite; /* Fx 5+ */
-  -o-animation: orangeBlink 0.2s infinite; /* Opera 12+ */
-  animation: orangeBlink 0.2s infinite; /* IE 10+, Fx 29+ */
+.anil-flowx-nodeBgOrangeBlink {
+  -webkit-animation: anil-flowx-orangeBlink 0.2s infinite; /* Safari 4+ */
+  -moz-animation: anil-flowx-orangeBlink 0.2s infinite; /* Fx 5+ */
+  -o-animation: anil-flowx-orangeBlink 0.2s infinite; /* Opera 12+ */
+  animation: anil-flowx-orangeBlink 0.2s infinite; /* IE 10+, Fx 29+ */
 }
-.nodeBgYellowBlink {
-  -webkit-animation: yellowBlink 0.2s infinite; /* Safari 4+ */
-  -moz-animation: yellowBlink 0.2s infinite; /* Fx 5+ */
-  -o-animation: yellowBlink 0.2s infinite; /* Opera 12+ */
-  animation: yellowBlink 0.2s infinite; /* IE 10+, Fx 29+ */
+.anil-flowx-nodeBgYellowBlink {
+  -webkit-animation: anil-flowx-yellowBlink 0.2s infinite; /* Safari 4+ */
+  -moz-animation: anil-flowx-yellowBlink 0.2s infinite; /* Fx 5+ */
+  -o-animation: anil-flowx-yellowBlink 0.2s infinite; /* Opera 12+ */
+  animation: anil-flowx-yellowBlink 0.2s infinite; /* IE 10+, Fx 29+ */
 }
-.nodeBgGreenBlink {
-  -webkit-animation: greenBlink 0.2s infinite; /* Safari 4+ */
-  -moz-animation: greenBlink 0.2s infinite; /* Fx 5+ */
-  -o-animation: greenBlink 0.2s infinite; /* Opera 12+ */
-  animation: greenBlink 0.2s infinite; /* IE 10+, Fx 29+ */
+.anil-flowx-nodeBgGreenBlink {
+  -webkit-animation: anil-flowx-greenBlink 0.2s infinite; /* Safari 4+ */
+  -moz-animation: anil-flowx-greenBlink 0.2s infinite; /* Fx 5+ */
+  -o-animation: anil-flowx-greenBlink 0.2s infinite; /* Opera 12+ */
+  animation: anil-flowx-greenBlink 0.2s infinite; /* IE 10+, Fx 29+ */
 }
-.nodeBgBlueBlink {
-  -webkit-animation: blueBlink 0.2s infinite; /* Safari 4+ */
-  -moz-animation: blueBlink 0.2s infinite; /* Fx 5+ */
-  -o-animation: blueBlink 0.2s infinite; /* Opera 12+ */
-  animation: blueBlink 0.2s infinite; /* IE 10+, Fx 29+ */
+.anil-flowx-nodeBgBlueBlink {
+  -webkit-animation: anil-flowx-blueBlink 0.2s infinite; /* Safari 4+ */
+  -moz-animation: anil-flowx-blueBlink 0.2s infinite; /* Fx 5+ */
+  -o-animation: anil-flowx-blueBlink 0.2s infinite; /* Opera 12+ */
+  animation: anil-flowx-blueBlink 0.2s infinite; /* IE 10+, Fx 29+ */
 }
-.nodeBgGrayBlink {
-  -webkit-animation: grayBlink 0.2s infinite; /* Safari 4+ */
-  -moz-animation: grayBlink 0.2s infinite; /* Fx 5+ */
-  -o-animation: grayBlink 0.2s infinite; /* Opera 12+ */
-  animation: grayBlink 0.2s infinite; /* IE 10+, Fx 29+ */
+.anil-flowx-nodeBgGrayBlink {
+  -webkit-animation: anil-flowx-grayBlink 0.2s infinite; /* Safari 4+ */
+  -moz-animation: anil-flowx-grayBlink 0.2s infinite; /* Fx 5+ */
+  -o-animation: anil-flowx-grayBlink 0.2s infinite; /* Opera 12+ */
+  animation: anil-flowx-grayBlink 0.2s infinite; /* IE 10+, Fx 29+ */
 }
 
 /* Animations */
-@keyframes redBlink {
+@keyframes anil-flowx-redBlink {
   0%,
   49% {
-    background-color: var(--whiteNode);
+    background-color: var(--anil-flowx-whiteNode);
   }
   50%,
   100% {
-    background-color: var(--redNode);
+    background-color: var(--anil-flowx-redNode);
   }
 }
-@keyframes orangeBlink {
+@keyframes anil-flowx-orangeBlink {
   0%,
   49% {
-    background-color: var(--whiteNode);
+    background-color: var(--anil-flowx-whiteNode);
   }
   50%,
   100% {
-    background-color: var(--orangeNode);
+    background-color: var(--anil-flowx-orangeNode);
   }
 }
-@keyframes yellowBlink {
+@keyframes anil-flowx-yellowBlink {
   0%,
   49% {
-    background-color: var(--whiteNode);
+    background-color: var(--anil-flowx-whiteNode);
   }
   50%,
   100% {
-    background-color: var(--yellowNode);
+    background-color: var(--anil-flowx-yellowNode);
   }
 }
-@keyframes greenBlink {
+@keyframes anil-flowx-greenBlink {
   0%,
   49% {
-    background-color: var(--whiteNode);
+    background-color: var(--anil-flowx-whiteNode);
   }
   50%,
   100% {
-    background-color: var(--greenNode);
+    background-color: var(--anil-flowx-greenNode);
   }
 }
-@keyframes blueBlink {
+@keyframes anil-flowx-blueBlink {
   0%,
   49% {
-    background-color: var(--whiteNode);
+    background-color: var(--anil-flowx-whiteNode);
   }
   50%,
   100% {
-    background-color: var(--blueNode);
+    background-color: var(--anil-flowx-blueNode);
   }
 }
 @keyframes grayBlink {
   0%,
   49% {
-    background-color: var(--whiteNode);
+    background-color: var(--anil-flowx-whiteNode);
   }
   50%,
   100% {
-    background-color: var(--grayNode);
+    background-color: var(--anil-flowx-grayNode);
   }
 }
 
-/* CSS */
-.nodeButton {
+.anil-flowx-nodeButton {
   background-color: #ffffff;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 5px;
@@ -324,13 +323,13 @@
   text-overflow: ellipsis;
 }
 
-.nodeButton:hover,
-.nodeButton:focus {
+.anil-flowx-nodeButton:hover,
+.anil-flowx-nodeButton:focus {
   border-color: rgba(0, 0, 0, 0.15);
   box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
 }
 
-.nodeButton:active {
+.anil-flowx-nodeButton:active {
   background-color: #f0f0f1;
   border-color: rgba(0, 0, 0, 0.15);
   box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
