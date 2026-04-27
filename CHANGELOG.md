@@ -1,5 +1,15 @@
 # Changelog
 
+## 2.0.1
+
+### Fixes
+
+- Converted CSS imports to emotion `injectGlobal` to comply with Grafana plugin marketplace requirements.
+- Replaced `@ts-ignore` comments with proper type casts.
+- Updated README demo images to use absolute GitHub raw URLs.
+- Added sponsor link to plugin metadata.
+- Added build provenance attestation to release workflow.
+
 ## 2.0.0
 
 ### Breaking Changes
