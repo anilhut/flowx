@@ -79,6 +79,6 @@
     "glob": "^10.2.7",
     "minimatch": "^10.0.0",
     "picomatch": "^4.0.4",
-    "serialize-javascript": "^6.0.2"
+    "serialize-javascript": "^7.0.5"
   }
 }
