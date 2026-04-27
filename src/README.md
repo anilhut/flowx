@@ -10,11 +10,11 @@ The FlowX Grafana panel enables the rendering of interactive flowcharts derived 
 
 ## Demo
 
-![FlowX Overview](/public/plugins/anilhut-flowx-panel/img/flowx-overview.gif)
+![FlowX Overview](https://raw.githubusercontent.com/anilhut/flowx/main/src/img/flowx-overview.gif)
 
-![Layout Direction](/public/plugins/anilhut-flowx-panel/img/flowx-layout-direction.gif)
+![Layout Direction](https://raw.githubusercontent.com/anilhut/flowx/main/src/img/flowx-layout-direction.gif)
 
-![Collapse & Expand](/public/plugins/anilhut-flowx-panel/img/flowx-collapse-expand.gif)
+![Collapse & Expand](https://raw.githubusercontent.com/anilhut/flowx/main/src/img/flowx-collapse-expand.gif)
 
 ## Requirements
 

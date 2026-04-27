@@ -21,8 +21,7 @@ import { LoadingState, PanelProps } from '@grafana/data';
 import { useTheme2 } from '@grafana/ui';
 import { PanelOptions } from 'types';
 import { PanelDataErrorView } from '@grafana/runtime';
-import '@xyflow/react/dist/style.css';
-import './custom_nodes/style_nodes.css';
+import './injectStyles';
 
 import TypeTitle from './custom_nodes/TypeTitle';
 import TypeOne from './custom_nodes/TypeOne';
@@ -373,8 +372,8 @@ const FlowxPanelInner: React.FC<Props> = ({ options, data, fieldConfig, id }) =>
 
       columnObj.values.forEach((row, index) => {
         if (internalName === 'id') {
-          // @ts-ignore
-          nodes[index]['id'] = row || `nullIDHandle${index}`;
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          (nodes[index] as any)['id'] = row || `nullIDHandle${index}`;
         } else {
           nodes[index].data[internalName] = row;
         }
@@ -503,8 +502,8 @@ const FlowxPanelInner: React.FC<Props> = ({ options, data, fieldConfig, id }) =>
     seriesEdge.forEach((columnObj) => {
       const internalName = edgeColToInternal[columnObj.name] ?? columnObj.name;
       columnObj.values.forEach((row, index) => {
-        // @ts-ignore
-        edges[index][internalName] = row || `null${internalName}Handle${index}`;
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        (edges[index] as any)[internalName] = row || `null${internalName}Handle${index}`;
       });
     });
 
@@ -719,8 +718,8 @@ const FlowxPanelInner: React.FC<Props> = ({ options, data, fieldConfig, id }) =>
       <div className="anil-flowx-panelContainer" style={{ backgroundColor: backgroundColor }}>
         {isNodeClicked && clickedNode && (
           <>
-            {/* @ts-ignore */}
-            <NodePopup clickedNode={clickedNode} onCancelClick={onPaneClick} backgroundColor={backgroundColor} />
+            {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
+            <NodePopup clickedNode={clickedNode as any} onCancelClick={onPaneClick} backgroundColor={backgroundColor} />
           </>
         )}
         <ReactFlow
@@ -765,8 +764,7 @@ const FlowxPanelInner: React.FC<Props> = ({ options, data, fieldConfig, id }) =>
           {backgroundType !== 'None' && (
             <Background
               color={backgroundTypeColor}
-              // @ts-ignore
-              variant={BackgroundVariant[backgroundType]}
+              variant={BackgroundVariant[backgroundType as keyof typeof BackgroundVariant]}
               size={backgroundSize}
               gap={backgroundGap}
             />

@@ -13,7 +13,12 @@
       "small": "img/logo.svg",
       "large": "img/logo.svg"
     },
-    "links": [],
+    "links": [
+      {
+        "name": "sponsor",
+        "url": "https://anilhut.gumroad.com/l/support-flowx-development"
+      }
+    ],
     "screenshots": [
       {
         "name": "Screenshot 01",

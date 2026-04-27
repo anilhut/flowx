@@ -1,5 +1,4 @@
 import * as React from 'react';
-import './style_nodes.css';
 import goUrl from 'src/img/arrow-top-right-on-square.svg';
 
 interface NodeData {
