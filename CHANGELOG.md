@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.0.2
+
+### Fixes
+
+- Upgraded serialize-javascript dependency override to 7.0.5 to resolve high severity OSV vulnerability.
+
 ## 2.0.1
 
 ### Fixes
