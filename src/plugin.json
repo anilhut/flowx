@@ -17,26 +17,38 @@
     "screenshots": [
       {
         "name": "Screenshot 01",
-        "path": "img/Screenshot_01.png"
+        "path": "img/Screenshot_02_01.png"
       },
       {
         "name": "Screenshot 02",
-        "path": "img/Screenshot_02.png"
+        "path": "img/Screenshot_02_02.png"
       },
       {
         "name": "Screenshot 03",
-        "path": "img/Screenshot_03.png"
+        "path": "img/Screenshot_02_03.png"
       },
       {
         "name": "Screenshot 04",
-        "path": "img/Screenshot_04.png"
+        "path": "img/Screenshot_02_04.png"
+      },
+      {
+        "name": "FlowX Overview",
+        "path": "img/flowx-overview.gif"
+      },
+      {
+        "name": "Layout Direction",
+        "path": "img/flowx-layout-direction.gif"
+      },
+      {
+        "name": "Collapse and Expand",
+        "path": "img/flowx-collapse-expand.gif"
       }
     ],
     "version": "%VERSION%",
     "updated": "%TODAY%"
   },
   "dependencies": {
-    "grafanaDependency": ">=10.1.0",
+    "grafanaDependency": ">=11.6.11",
     "plugins": []
   }
 }

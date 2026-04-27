@@ -10,6 +10,10 @@ interface CustomData extends Record<string, unknown> {
   value2_data: string;
   value3_header: string;
   value3_data: string;
+  value4_header: string;
+  value4_data: string;
+  value5_header: string;
+  value5_data: string;
   bgColorCondition: string;
   hasChildren?: boolean;
   isCollapsed?: boolean;
@@ -20,7 +24,7 @@ interface CustomNodeProps extends NodeProps {
   data: CustomData;
 }
 
-const TypeThree: React.FC<CustomNodeProps> = (props) => {
+const TypeFive: React.FC<CustomNodeProps> = (props) => {
   const {
     title,
     value1_header,
@@ -29,6 +33,10 @@ const TypeThree: React.FC<CustomNodeProps> = (props) => {
     value2_data,
     value3_header,
     value3_data,
+    value4_header,
+    value4_data,
+    value5_header,
+    value5_data,
     bgColorCondition,
     hasChildren,
     isCollapsed,
@@ -37,7 +45,7 @@ const TypeThree: React.FC<CustomNodeProps> = (props) => {
 
   return (
     <div style={{ position: 'relative', width: '100%', height: '100%' }}>
-      <div className={`anil-flowx-nodeCustomContainer anil-flowx-nodeTypeThree ${bgColorCondition}`}>
+      <div className={`anil-flowx-nodeCustomContainer anil-flowx-nodeTypeFive ${bgColorCondition}`}>
         {props.targetPosition === 'top' && <Handle type="target" position={Position.Top} />}
         {props.targetPosition === 'left' && <Handle type="target" position={Position.Left} />}
         {props.sourcePosition === 'bottom' && <Handle type="source" position={Position.Bottom} />}
@@ -70,6 +78,20 @@ const TypeThree: React.FC<CustomNodeProps> = (props) => {
               </div>
             )}
             {value3_data && <div>{value3_data}</div>}
+
+            {value4_header && (
+              <div title={value4_header}>
+                <b>{value4_header}</b>
+              </div>
+            )}
+            {value4_data && <div>{value4_data}</div>}
+
+            {value5_header && (
+              <div title={value5_header}>
+                <b>{value5_header}</b>
+              </div>
+            )}
+            {value5_data && <div>{value5_data}</div>}
           </div>
         </div>
       </div>
@@ -85,4 +107,4 @@ const TypeThree: React.FC<CustomNodeProps> = (props) => {
   );
 };
 
-export default TypeThree;
+export default TypeFive;

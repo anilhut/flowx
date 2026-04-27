@@ -28,6 +28,32 @@
   height: 242px; /* Default */
 }
 
+/*COLLAPSE BUTTON*/
+.anil-flowx-collapseBtn {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 1px solid #888;
+  background: #ffffff;
+  color: #444;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: bold;
+  z-index: 10;
+  padding: 0;
+  line-height: 1;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+.anil-flowx-collapseBtn:hover {
+  background: #f0f0f0;
+  border-color: #555;
+}
+
 .anil-flowx-nodeCustomValues {
   height: 100%; /* 8*24px + 20px */
   display: flex;
@@ -99,6 +125,16 @@
 .anil-flowx-nodeTypeFour {
   width: 240px !important; /* Overwrite */
   height: 242px !important; /* Overwrite */
+}
+/* FOR NODES TypeFive */
+.anil-flowx-nodeTypeFive {
+  width: 240px !important; /* Overwrite */
+  height: 290px !important; /* Overwrite */
+}
+/* FOR NODES TypeSix */
+.anil-flowx-nodeTypeSix {
+  width: 240px !important; /* Overwrite */
+  height: 338px !important; /* Overwrite */
 }
 /* FOR NODES TypeCircle */
 .anil-flowx-nodeTypeCircle {

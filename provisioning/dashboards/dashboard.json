@@ -1,102 +1,117 @@
 {
-  "annotations": {
-    "list": [
-      {
-        "builtIn": 1,
-        "datasource": {
-          "type": "grafana",
-          "uid": "-- Grafana --"
-        },
-        "enable": true,
-        "hide": true,
-        "iconColor": "rgba(0, 211, 255, 1)",
-        "name": "Annotations & Alerts",
-        "type": "dashboard"
-      }
-    ]
-  },
+  "annotations": { "list": [] },
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
   "id": 1,
   "links": [],
-  "liveNow": false,
   "panels": [
     {
-      "datasource": {
-        "type": "grafana",
-        "uid": "grafana"
-      },
-      "gridPos": {
-        "h": 8,
-        "w": 12,
-        "x": 0,
-        "y": 0
-      },
+      "datasource": { "type": "marcusolsson-static-datasource", "uid": "U0HP2Rv4z" },
+      "gridPos": { "h": 12, "w": 24, "x": 0, "y": 0 },
       "id": 1,
       "options": {
-        "seriesCountSize": "sm",
-        "showSeriesCount": false,
-        "text": "Default value of text input option"
+        "backgroundColor": "#ffffff",
+        "backgroundGap": 28,
+        "backgroundSize": 1,
+        "backgroundType": "None",
+        "backgroundTypeColor": "#000000",
+        "edgeAnimation": true,
+        "edgeColor": "#000000",
+        "edgeStroke": 1,
+        "edgeType": "default",
+        "fitViewOnCollapse": false,
+        "hideAttribution": true,
+        "initialDepth": 0,
+        "isDraggable": false,
+        "layoutDirection": "TB",
+        "maxZoom": 4,
+        "minZoom": 0.1,
+        "showControls": true,
+        "showLayoutOptions": true,
+        "showMiniMap": true,
+        "showPopup": false,
+        "fieldMapping": {}
       },
       "targets": [
         {
-          "datasource": {
-            "type": "datasource",
-            "uid": "grafana"
+          "datasource": { "type": "marcusolsson-static-datasource", "uid": "U0HP2Rv4z" },
+          "frame": {
+            "fields": [
+              { "config": {}, "name": "id", "type": "string", "values": ["node1", "node2"] },
+              { "config": {}, "name": "type", "type": "string", "values": ["circle", "title"] },
+              { "config": {}, "name": "title", "type": "string", "values": ["Node 1", "Node 2"] },
+              { "config": {}, "name": "color_condition", "type": "string", "values": ["green", ""] }
+            ],
+            "meta": {},
+            "name": "Node"
           },
+          "refId": "Node"
+        },
+        {
+          "datasource": { "type": "marcusolsson-static-datasource", "uid": "U0HP2Rv4z" },
+          "frame": {
+            "fields": [
+              { "config": {}, "name": "id", "type": "string", "values": ["edge1"] },
+              { "config": {}, "name": "source", "type": "string", "values": ["node1"] },
+              { "config": {}, "name": "target", "type": "string", "values": ["node2"] }
+            ],
+            "meta": {},
+            "name": "Edge"
+          },
+          "hide": false,
+          "refId": "Edge"
+        }
+      ],
+      "title": "FlowX Test Panel",
+      "type": "anilhut-flowx-panel"
+    },
+    {
+      "datasource": { "type": "grafana", "uid": "grafana" },
+      "gridPos": { "h": 12, "w": 24, "x": 0, "y": 12 },
+      "id": 2,
+      "options": {
+        "backgroundColor": "#ffffff",
+        "backgroundGap": 28,
+        "backgroundSize": 1,
+        "backgroundType": "None",
+        "backgroundTypeColor": "#000000",
+        "edgeAnimation": true,
+        "edgeColor": "#000000",
+        "edgeStroke": 1,
+        "edgeType": "default",
+        "fitViewOnCollapse": false,
+        "hideAttribution": false,
+        "initialDepth": 0,
+        "isDraggable": false,
+        "layoutDirection": "TB",
+        "maxZoom": 4,
+        "minZoom": 0.1,
+        "showControls": true,
+        "showLayoutOptions": true,
+        "showMiniMap": true,
+        "showPopup": false,
+        "fieldMapping": {}
+      },
+      "targets": [
+        {
+          "datasource": { "type": "datasource", "uid": "grafana" },
           "queryType": "randomWalk",
           "refId": "A"
         }
       ],
-      "title": "Panel Title",
-      "type": "anilhut-flowx-panel"
-    },
-    {
-      "datasource": {
-        "type": "grafana-testdata-datasource",
-        "uid": "trlxrdZVk"
-      },
-      "gridPos": {
-        "h": 8,
-        "w": 12,
-        "x": 12,
-        "y": 0
-      },
-      "id": 2,
-      "options": {
-        "seriesCountSize": "sm",
-        "showSeriesCount": false,
-        "text": "Default value of text input option"
-      },
-      "targets": [
-        {
-          "alias": "",
-          "datasource": {
-            "type": "grafana-testdata-datasource",
-            "uid": "db84e60d-b92a-4089-82cb-34842fb1754b"
-          },
-          "refId": "A",
-          "scenarioId": "no_data_points"
-        }
-      ],
-      "title": "Panel Title",
+      "title": "FlowX No Node/Edge Queries",
       "type": "anilhut-flowx-panel"
     }
   ],
   "refresh": "",
   "schemaVersion": 39,
   "tags": [],
-  "templating": {
-    "list": []
-  },
-  "time": {
-    "from": "now-6h",
-    "to": "now"
-  },
+  "templating": { "list": [] },
+  "time": { "from": "now-6h", "to": "now" },
   "timepicker": {},
   "timezone": "",
-  "title": "Provisioned Flowx dashboard",
+  "title": "FlowX E2E Test Dashboard",
   "uid": "a538aeff-5a8a-42a5-901c-938d896fdd6f",
   "version": 1,
   "weekStart": ""

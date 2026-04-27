@@ -1,39 +1,43 @@
 import { test, expect } from '@grafana/plugin-e2e';
 
-test('should display "No data" in case panel data is empty', async ({
+test('should display error when Node and Edge queries are missing', async ({
   gotoPanelEditPage,
   readProvisionedDashboard,
 }) => {
   const dashboard = await readProvisionedDashboard({ fileName: 'dashboard.json' });
   const panelEditPage = await gotoPanelEditPage({ dashboard, id: '2' });
-  await expect(panelEditPage.panel.locator).toContainText('No data');
+  await expect(panelEditPage.panel.locator).toContainText("Add two queries named 'Node' and 'Edge'.");
 });
 
-test('should display circle when data is passed to the panel', async ({
-  panelEditPage,
-  readProvisionedDataSource,
+test('should render flow canvas when valid Node and Edge data is provided', async ({
+  gotoPanelEditPage,
+  readProvisionedDashboard,
   page,
 }) => {
-  const ds = await readProvisionedDataSource({ fileName: 'datasources.yml' });
-  await panelEditPage.datasource.set(ds.name);
-  await panelEditPage.setVisualization('Flowx');
-  await expect(page.getByTestId('simple-panel-circle')).toBeVisible();
+  const dashboard = await readProvisionedDashboard({ fileName: 'dashboard.json' });
+  const panelEditPage = await gotoPanelEditPage({ dashboard, id: '1' });
+  await expect(panelEditPage.panel.locator).toBeVisible();
+  await expect(page.locator('.react-flow__node').first()).toBeVisible();
 });
 
-test('should display series counter when "Show series counter" option is enabled', async ({
-  panelEditPage,
-  readProvisionedDataSource,
+test('should render correct number of nodes', async ({
+  gotoPanelEditPage,
+  readProvisionedDashboard,
   page,
-  selectors,
 }) => {
-  const ds = await readProvisionedDataSource({ fileName: 'datasources.yml' });
-  await panelEditPage.datasource.set(ds.name);
-  await panelEditPage.setVisualization('Flowx');
-  await panelEditPage.collapseSection('Flowx');
-  await expect(page.getByTestId('simple-panel-circle')).toBeVisible();
-  const showSeriesSwitch = panelEditPage
-    .getByGrafanaSelector(selectors.components.PanelEditor.OptionsPane.fieldLabel('Flowx Show series counter'))
-    .getByLabel('Toggle switch');
-  await showSeriesSwitch.click();
-  await expect(page.getByTestId('simple-panel-series-counter')).toBeVisible();
+  const dashboard = await readProvisionedDashboard({ fileName: 'dashboard.json' });
+  const panelEditPage = await gotoPanelEditPage({ dashboard, id: '1' });
+  await expect(panelEditPage.panel.locator).toBeVisible();
+  await expect(page.locator('.react-flow__node')).toHaveCount(2);
+});
+
+test('should render correct number of edges', async ({
+  gotoPanelEditPage,
+  readProvisionedDashboard,
+  page,
+}) => {
+  const dashboard = await readProvisionedDashboard({ fileName: 'dashboard.json' });
+  const panelEditPage = await gotoPanelEditPage({ dashboard, id: '1' });
+  await expect(panelEditPage.panel.locator).toBeVisible();
+  await expect(page.locator('.react-flow__edge')).toHaveCount(1);
 });

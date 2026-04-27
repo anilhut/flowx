@@ -16,6 +16,12 @@ interface NodeData {
   value4_header: string;
   value4_data: string;
   value4_url: string;
+  value5_header: string;
+  value5_data: string;
+  value5_url: string;
+  value6_header: string;
+  value6_data: string;
+  value6_url: string;
   bgColorCondition: string;
   url: string;
   url_label: string;
@@ -112,6 +118,36 @@ const NodePopup: React.FC<NodePopupProps> = ({ clickedNode, onCancelClick }) => 
                 {data.value4_data}
                 {data.value4_url && (
                   <a href={data.value4_url} target="_blank" rel="noopener noreferrer">
+                    {' '}
+                    <img src={goUrl} height={18} />
+                  </a>
+                )}
+              </div>
+            </div>
+          )}
+
+          {data.value5_data && (
+            <div>
+              <b title={data.value5_header}>{data.value5_header}</b>
+              <div>
+                {data.value5_data}
+                {data.value5_url && (
+                  <a href={data.value5_url} target="_blank" rel="noopener noreferrer">
+                    {' '}
+                    <img src={goUrl} height={18} />
+                  </a>
+                )}
+              </div>
+            </div>
+          )}
+
+          {data.value6_data && (
+            <div>
+              <b title={data.value6_header}>{data.value6_header}</b>
+              <div>
+                {data.value6_data}
+                {data.value6_url && (
+                  <a href={data.value6_url} target="_blank" rel="noopener noreferrer">
                     {' '}
                     <img src={goUrl} height={18} />
                   </a>
