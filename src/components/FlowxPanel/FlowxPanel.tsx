@@ -22,7 +22,6 @@ import { useTheme2, useStyles2 } from '@grafana/ui';
 import { getNodeStyles } from './custom_nodes/nodeStyles';
 import { PanelOptions } from 'types';
 import { PanelDataErrorView } from '@grafana/runtime';
-import '@xyflow/react/dist/style.css';
 
 import TypeTitle from './custom_nodes/TypeTitle';
 import TypeOne from './custom_nodes/TypeOne';

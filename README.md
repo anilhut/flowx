@@ -5,6 +5,7 @@
 [![GitHub Stars](https://img.shields.io/github/stars/anilhut/flowx?style=flat&logo=github)](https://github.com/anilhut/flowx)
 [![GitHub Issues](https://img.shields.io/github/issues/anilhut/flowx?style=flat&logo=github)](https://github.com/anilhut/flowx/issues)
 [![Support on Gumroad](https://img.shields.io/badge/Support%20on-Gumroad-pink?style=flat)](https://anilhut.gumroad.com/l/support-flowx-development)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-anilhut-blue?style=flat&logo=linkedin)](https://www.linkedin.com/in/anilhut)
 
 The FlowX Grafana panel enables the rendering of interactive flowcharts derived from directed graph data, consisting of nodes and edges. FlowX supports a variety of node types, each designed for specific use cases. Grafana provides a Node Graph panel for visualizing directed graph data, but its visualization capabilities are quite limited. To address the need for more advanced and rich visualizations of directed graphs, this panel has been developed. It leverages ReactFlow and DagreJS to deliver enhanced visualization features.
 
@@ -210,7 +211,7 @@ Support the continued development of FlowX for Grafana. Your contribution helps 
 
 ## Contact
 
-Write on [Linkedin](https://www.linkedin.com/in/anilhut)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-anilhut-blue?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/anilhut)
 
 ## Credits and References
 
