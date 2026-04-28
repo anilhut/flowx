@@ -5,7 +5,6 @@
 ### Fixes
 
 - Scoped @xyflow/react styles inside the panel container using nested Emotion CSS selectors — no direct CSS imports remain.
-- Added LinkedIn badge to README.
 
 ## 2.0.3
 
