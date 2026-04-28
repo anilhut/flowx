@@ -1,5 +1,7 @@
 import * as React from 'react';
+import { useStyles2 } from '@grafana/ui';
 import goUrl from 'src/img/arrow-top-right-on-square.svg';
+import { getNodeStyles, getBgClass } from './nodeStyles';
 
 interface NodeData {
   title: string;
@@ -37,30 +39,21 @@ interface NodePopupProps {
 }
 
 const NodePopup: React.FC<NodePopupProps> = ({ clickedNode, onCancelClick }) => {
+  const styles = useStyles2(getNodeStyles);
   const { data } = clickedNode;
-
-  const bgColorCondition = data.bgColorCondition;
 
   return (
     <>
-      <div className={`anil-flowx-nodePopup ${bgColorCondition}`} style={{ color: 'black' }}>
-        <div className="anil-flowx-nodePopupInside">
+      <div className={`${styles.nodePopup} ${getBgClass(styles, data.bgColorCondition)}`} style={{ color: 'black' }}>
+        <div className={styles.nodePopupInside}>
           {data.title && (
-            <>
-              <div className="anil-flowx-nodePopupTitle" title={data.title}>
-                {data.title}
-              </div>
-            </>
+            <div className={styles.nodePopupTitle} title={data.title}>
+              {data.title}
+            </div>
           )}
 
           {data.url && (
-            <a
-              className="anil-flowx-nodeButton"
-              href={data.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ color: 'black' }}
-            >
+            <a className={styles.nodeButton} href={data.url} target="_blank" rel="noopener noreferrer" style={{ color: 'black' }}>
               {data.url_label ? data.url_label : data.url}
             </a>
           )}
@@ -72,8 +65,7 @@ const NodePopup: React.FC<NodePopupProps> = ({ clickedNode, onCancelClick }) => 
                 {data.value1_data}
                 {data.value1_url && (
                   <a href={data.value1_url} target="_blank" rel="noopener noreferrer">
-                    {' '}
-                    <img src={goUrl} height={20} />
+                    {' '}<img src={goUrl} height={20} />
                   </a>
                 )}
               </div>
@@ -87,8 +79,7 @@ const NodePopup: React.FC<NodePopupProps> = ({ clickedNode, onCancelClick }) => 
                 {data.value2_data}
                 {data.value2_url && (
                   <a href={data.value2_url} target="_blank" rel="noopener noreferrer">
-                    {' '}
-                    <img src={goUrl} height={18} />
+                    {' '}<img src={goUrl} height={18} />
                   </a>
                 )}
               </div>
@@ -102,8 +93,7 @@ const NodePopup: React.FC<NodePopupProps> = ({ clickedNode, onCancelClick }) => 
                 {data.value3_data}
                 {data.value3_url && (
                   <a href={data.value3_url} target="_blank" rel="noopener noreferrer">
-                    {' '}
-                    <img src={goUrl} height={18} />
+                    {' '}<img src={goUrl} height={18} />
                   </a>
                 )}
               </div>
@@ -117,8 +107,7 @@ const NodePopup: React.FC<NodePopupProps> = ({ clickedNode, onCancelClick }) => 
                 {data.value4_data}
                 {data.value4_url && (
                   <a href={data.value4_url} target="_blank" rel="noopener noreferrer">
-                    {' '}
-                    <img src={goUrl} height={18} />
+                    {' '}<img src={goUrl} height={18} />
                   </a>
                 )}
               </div>
@@ -132,8 +121,7 @@ const NodePopup: React.FC<NodePopupProps> = ({ clickedNode, onCancelClick }) => 
                 {data.value5_data}
                 {data.value5_url && (
                   <a href={data.value5_url} target="_blank" rel="noopener noreferrer">
-                    {' '}
-                    <img src={goUrl} height={18} />
+                    {' '}<img src={goUrl} height={18} />
                   </a>
                 )}
               </div>
@@ -147,15 +135,14 @@ const NodePopup: React.FC<NodePopupProps> = ({ clickedNode, onCancelClick }) => 
                 {data.value6_data}
                 {data.value6_url && (
                   <a href={data.value6_url} target="_blank" rel="noopener noreferrer">
-                    {' '}
-                    <img src={goUrl} height={18} />
+                    {' '}<img src={goUrl} height={18} />
                   </a>
                 )}
               </div>
             </div>
           )}
 
-          <button className="anil-flowx-nodeButton" onClick={onCancelClick}>
+          <button className={styles.nodeButton} onClick={onCancelClick}>
             Cancel
           </button>
         </div>

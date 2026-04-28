@@ -1,5 +1,12 @@
 # Changelog
 
+## 2.0.3
+
+### Fixes
+
+- Replaced `injectGlobal` with component-scoped Emotion styles using `useStyles2` to comply with Grafana plugin guidelines.
+- Restored `@xyflow/react/dist/style.css` import for standard library styling.
+
 ## 2.0.2
 
 ### Fixes

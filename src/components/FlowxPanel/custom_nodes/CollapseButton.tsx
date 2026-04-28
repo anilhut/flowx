@@ -1,4 +1,6 @@
 import React from 'react';
+import { useStyles2 } from '@grafana/ui';
+import { getNodeStyles } from './nodeStyles';
 
 interface CollapseButtonProps {
   isCollapsed: boolean;
@@ -7,6 +9,7 @@ interface CollapseButtonProps {
 }
 
 const CollapseButton: React.FC<CollapseButtonProps> = ({ isCollapsed, onToggle, sourcePosition }) => {
+  const styles = useStyles2(getNodeStyles);
   const isRight = sourcePosition === 'right';
 
   const style: React.CSSProperties = isRight
@@ -15,7 +18,7 @@ const CollapseButton: React.FC<CollapseButtonProps> = ({ isCollapsed, onToggle, 
 
   return (
     <button
-      className="anil-flowx-collapseBtn"
+      className={styles.collapseBtn}
       style={style}
       onClick={(e) => {
         e.stopPropagation();
